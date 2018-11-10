@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac21f949-f1f8-4e22-8b1e-114765380a0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Tron.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Tron.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Bike.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Bike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Genome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Genome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WEC-Tron-AI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,7 +70,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="241">
               <caret line="314" column="47" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
               <folding>
                 <element signature="e#549#550#0" expanded="true" />
@@ -169,7 +163,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541823719862" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541824127887" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -216,7 +210,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16882068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -228,7 +221,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.47534245" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23972602" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30273974" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,7 +324,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="241">
           <caret line="314" column="47" selection-start-line="314" selection-start-column="47" selection-end-line="314" selection-end-column="47" />
           <folding>
             <element signature="e#549#550#0" expanded="true" />
