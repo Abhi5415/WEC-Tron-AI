@@ -19,8 +19,11 @@ socket.onerror = error => {
 };
 
 socket.onmessage = e => {
-  var gameState = [[e.data]];
-  console.log(gameState);
+  var gameStateString = JSON.parse([[[e.data]]]);
+
+  console.log(gameStateString);
+
+  // console.log(board);
 
   var index = 0;
   var board = [];
