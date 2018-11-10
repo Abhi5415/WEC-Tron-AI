@@ -42,10 +42,11 @@ public class Main {
         // store winners from most recent generation
         Genome[] currGeneration = new Genome[50];
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i += 2) {
             genomes[i] = new Genome();
+            genomes[i + 1] = new Genome();
             // select two genomes
-            // curr[i / 2] = play(genomes[i], genomes[++i]);
+            currGeneration[i / 2] = playGame(genomes[i], genomes[i + 1]);
         }
 
         // rewrite old generation
@@ -69,10 +70,16 @@ public class Main {
         }
     }
 
-    static int random(int low, int high) {
-        return (int)(Math.random() * (high - low)) + 1;
+    static Genome playGame(Genome g1, Genome g2) {
+        Tron tron = new Tron();
+        System.out.println(g1);
+        System.out.println(g2);
+        return tron.returnWinner(g1, g2);
     }
 
+    static int random(int low, int high) {
+        return (int) (Math.random() * (high - low)) + 1;
+    }
 
 
     /*

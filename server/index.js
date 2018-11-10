@@ -1,11 +1,10 @@
-var WebSocket = require('ws')
+var WebSocket = require("ws");
 
-const url = 'ws://35.183.103.104:8080/connect_dev';
+const url = "ws://35.183.103.104:8080/connect_dev";
 const socket = new WebSocket(url);
 
 socket.onopen = () => {
-
-  var registrationJSON = { 
+  var registrationJSON = {
     type: "REGISTRATION",
     message: "",
     authenticationKey: "",
@@ -13,17 +12,16 @@ socket.onopen = () => {
   };
 
   socket.send(JSON.stringify(registrationJSON));
-}
+};
 
-socket.onerror = (error) => {
-  console.log(`WebSocket error: ${error}`)
-}
+socket.onerror = error => {
+  console.log(`WebSocket error: ${error}`);
+};
 
-socket.onmessage = (e) => {
+socket.onmessage = e => {
   var gameState = [[e.data]];
-  console.log(gameState[0][1]);
-  
-  
+  console.log(gameState);
+
   var index = 0;
   var board = [];
   // for (var i = 0; i < 17; i++) {
@@ -33,6 +31,4 @@ socket.onmessage = (e) => {
   //   }
   //   board.push(row);
   // }
-  
-  
-}
+};
