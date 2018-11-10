@@ -19,9 +19,7 @@ public class Tron {
     private static boolean gameOver = false;
 
     public Tron() {
-
-
-
+        setGrid();
     }
 
     public static void setGrid() {
@@ -125,23 +123,23 @@ public class Tron {
         return true;
     }
 
-    public static void main(String args[]){
-        setGrid();
-        makeMove('S', 'S');
-        printGrid(grid);
-
-        makeMove('L', 'R');
-        printGrid(grid);
-
-        makeMove('S', 'S');
-        printGrid(grid);
-
-        makeMove('L', 'R');
-        printGrid(grid);
-
-        makeMove('S', 'S');
-        printGrid(grid);
-    }
+//    public static void main(String args[]){
+//        setGrid();
+//        makeMove('S', 'S');
+//        printGrid(grid);
+//
+//        makeMove('L', 'R');
+//        printGrid(grid);
+//
+//        makeMove('S', 'S');
+//        printGrid(grid);
+//
+//        makeMove('L', 'R');
+//        printGrid(grid);
+//
+//        makeMove('S', 'S');
+//        printGrid(grid);
+//    }
 
     public static void printGrid(char[][] grid) {
         for (int i = 0; i < grid.length; i++) {
@@ -305,10 +303,13 @@ public class Tron {
         if (winnerOne || winnerTwo) gameOver = true;
     }
 
-    public boolean returnWinner() {
+    public Genome returnWinner(Genome g1, Genome g2) {
         while (!gameOver) {
-
+            makeMove(g1.nextMove(grid, new Bike(bike1Row, bike1Column), new Bike(bike2Row, bike2Column), bike1Direction),
+                    g2.nextMove(grid, new Bike(bike2Row, bike2Column), new Bike(bike1Row, bike1Column), bike2Direction) );
         }
+        if (winnerOne) return g1;
+        else return g2;
     }
 }
 
