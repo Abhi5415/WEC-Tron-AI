@@ -4,7 +4,7 @@ public class Genome {
     double closeFreespace;
     double closeWallDistance;
     double[] closeRelativeEnemyX; // indexes S, L, R
-    double[]  closeRelativeEnemyY;
+    double[] closeRelativeEnemyY;
     double farFreespace;
     double farWallDistance;
     double[] farRelativeEnemyX;
@@ -12,7 +12,8 @@ public class Genome {
     char currDirection;
     boolean didWin;
 
-    public Genome() {       this.closeFreespace = random(-100, 100);
+    public Genome() {
+        this.closeFreespace = random(-100, 100);
         this.closeWallDistance = random(-100, 100);
         this.closeRelativeEnemyX = new double[3];
         this.closeRelativeEnemyX[0] = random(-100, 100);
@@ -68,9 +69,9 @@ public class Genome {
 
         char moveL = 's';
         char moveR = 's';
-        Bike bikeS = new Bike(0,0);
-        Bike bikeL = new Bike(0,0);
-        Bike bikeR = new Bike(0,0);
+        Bike bikeS = new Bike(0, 0);
+        Bike bikeL = new Bike(0, 0);
+        Bike bikeR = new Bike(0, 0);
 
         switch (currentDirection) {
             case 'u':
@@ -107,15 +108,12 @@ public class Genome {
             ratingS += distanceToNearestObstacle(grid, myPosition, currentDirection) * farWallDistance;
             ratingL += distanceToNearestObstacle(grid, myPosition, moveL) * farWallDistance;
             ratingR += distanceToNearestObstacle(grid, myPosition, moveR) * farWallDistance;
-
             ratingS += freeSpacesAtIndex(grid, bikeS) * farFreespace;
             ratingL += freeSpacesAtIndex(grid, bikeL) * farFreespace;
             ratingR += freeSpacesAtIndex(grid, bikeR) * farFreespace;
-
             ratingS += relativeX(bikeS, enemyPosition) * farRelativeEnemyX[0];
             ratingL += relativeX(bikeL, enemyPosition) * farRelativeEnemyX[1];
             ratingR += relativeX(bikeR, enemyPosition) * farRelativeEnemyX[2];
-
             ratingS += relativeY(bikeS, enemyPosition) * farRelativeEnemyY[0];
             ratingL += relativeY(bikeL, enemyPosition) * farRelativeEnemyY[1];
             ratingR += relativeY(bikeR, enemyPosition) * farRelativeEnemyY[2];
@@ -123,15 +121,12 @@ public class Genome {
             ratingS += distanceToNearestObstacle(grid, myPosition, currentDirection) * closeWallDistance;
             ratingL += distanceToNearestObstacle(grid, myPosition, moveL) * closeWallDistance;
             ratingR += distanceToNearestObstacle(grid, myPosition, moveR) * closeWallDistance;
-
             ratingS += freeSpacesAtIndex(grid, bikeS) * closeFreespace;
             ratingL += freeSpacesAtIndex(grid, bikeL) * closeFreespace;
             ratingR += freeSpacesAtIndex(grid, bikeR) * closeFreespace;
-
             ratingS += relativeX(bikeS, enemyPosition) * closeRelativeEnemyX[0];
             ratingL += relativeX(bikeL, enemyPosition) * closeRelativeEnemyX[1];
             ratingR += relativeX(bikeR, enemyPosition) * closeRelativeEnemyX[2];
-
             ratingS += relativeY(bikeS, enemyPosition) * closeRelativeEnemyY[0];
             ratingL += relativeY(bikeL, enemyPosition) * closeRelativeEnemyY[1];
             ratingR += relativeY(bikeR, enemyPosition) * closeRelativeEnemyY[2];
