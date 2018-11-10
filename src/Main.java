@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        //
         char[][] grid = new char[17][17];
 
         for (int i = 0; i < grid.length; i++) {
@@ -23,7 +22,8 @@ public class Main {
 
         grid[s.row][s.col] = 's';
         grid[p.row][p.col] = 'p';
-
+        grid[s.row+1][s.col] = 's';
+        grid[s.row][s.col+1] = 's';
 
 
         printGrid(grid);
@@ -33,14 +33,14 @@ public class Main {
         System.out.println(" LEFT " + distanceToNearestObstacle(grid, p, 'l'));
         System.out.println(" RIGHT " + distanceToNearestObstacle(grid, p, 'r'));
 
+        System.out.println(freeSpacesAtIndex(s, grid));
     }
 
     /*
-    Calculates the distance to the nearest obstacle (a wall or another player) given the direction
-    TODO: Add current direction!
+    Calculates the distance to the nearest obstacle (a wall or another player) given the direction.
      */
     public static int distanceToNearestObstacle(char[][] state, Bike curr, char direction) {
-        switch(direction) {
+        switch (direction) {
             case 'u':
                 for (int i = curr.row - 1; i >= 0; i--) {
                     if (state[i][curr.col] != '.') {
@@ -71,19 +71,43 @@ public class Main {
     }
 
     /*
-    Calculates relative x position with respect to b1. Assumes the move is valid. Takes in direction of next move.
+    Calculates the free spaces in a 3x3 square with the center as the Bike passed.
      */
-    public int relativeX(Bike b1, Bike b2, char direction) {
-        return -1;
+    public static int freeSpacesAtIndex(Bike b, char[][] state) {
+        int x = b.row;
+        int y = b.col;
+
+        int res = 0;
+
+        for (int r = x - 1; r < x + 2; r++) {
+            for (int c = y - 1; c < y + 2; c++) {
+                // validate bounds
+                if (r < 0 || r >= state.length || c < 0 || c >= state.length) continue;
+
+                if (state[r][c] == '.') res++;
+            }
+        }
+
+        return res;
     }
 
     /*
-    Calculates relative y position with respect to b1. Assumes the move is valid. Takes in direction of the next move.
+    Calculates relative x position with respect to b1. Assumes the move is valid.
      */
-    public int relativeY(Bike b1, Bike b2, char direction) {
-        return -1;
+    public int relativeX(Bike b1, Bike b2) {
+        return b2.col - b1.col;
     }
 
+    /*
+    Calculates relative y position with respect to b1. Assumes the move is valid.
+     */
+    public int relativeY(Bike b1, Bike b2) {
+        return b2.row - b1.row;
+    }
+
+    /*
+    Prints the array as a debug function.
+     */
     public static void printGrid(char[][] grid) {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
