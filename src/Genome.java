@@ -40,17 +40,21 @@ public class Genome {
     public Genome(Genome g1, Genome g2) {
         this.closeFreespace = random(g1.closeFreespace, g2.closeFreespace);
         this.closeWallDistance = random(g1.closeWallDistance, g2.closeWallDistance);
+        this.closeRelativeEnemyX = new double[3];
         this.closeRelativeEnemyX[0] = random(g1.closeRelativeEnemyX[0], g2.closeRelativeEnemyX[0]);
         this.closeRelativeEnemyX[1] = random(g1.closeRelativeEnemyX[1], g2.closeRelativeEnemyX[1]);
         this.closeRelativeEnemyX[2] = random(g1.closeRelativeEnemyX[2], g2.closeRelativeEnemyX[2]);
+        this.closeRelativeEnemyY = new double[3];
         this.closeRelativeEnemyY[0] = random(g1.closeRelativeEnemyY[0], g2.closeRelativeEnemyY[0]);
         this.closeRelativeEnemyY[1] = random(g1.closeRelativeEnemyY[1], g2.closeRelativeEnemyY[1]);
         this.closeRelativeEnemyY[2] = random(g1.closeRelativeEnemyY[2], g2.closeRelativeEnemyY[2]);
         this.farFreespace = random(g1.farFreespace, g2.farFreespace);
         this.farWallDistance = random(g1.farWallDistance, g2.farWallDistance);
+        this.farRelativeEnemyX = new double[3];
         this.farRelativeEnemyX[0] = random(g1.farRelativeEnemyX[0], g2.farRelativeEnemyX[0]);
         this.farRelativeEnemyX[1] = random(g1.farRelativeEnemyX[1], g2.farRelativeEnemyX[1]);
         this.farRelativeEnemyX[2] = random(g1.farRelativeEnemyX[2], g2.farRelativeEnemyX[2]);
+        this.farRelativeEnemyY = new double[3];
         this.farRelativeEnemyY[0] = random(g1.farRelativeEnemyY[0], g2.farRelativeEnemyY[0]);
         this.farRelativeEnemyY[1] = random(g1.farRelativeEnemyY[1], g2.farRelativeEnemyY[1]);
         this.farRelativeEnemyY[2] = random(g1.farRelativeEnemyY[2], g2.farRelativeEnemyY[2]);

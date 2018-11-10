@@ -39,35 +39,40 @@ public class Main {
         // make initial generation
         Genome[] genomes = new Genome[100];
 
-        // store winners from most recent generation
-        Genome[] currGeneration = new Genome[50];
+        for (int generation = 0; generation < 1000; generation++) {
+            // store winners from most recent generation
+            Genome[] currGeneration = new Genome[50];
 
-        for (int i = 0; i < 100; i += 2) {
-            genomes[i] = new Genome();
-            genomes[i + 1] = new Genome();
-            // select two genomes
-            currGeneration[i / 2] = playGame(genomes[i], genomes[i + 1]);
+            for (int i = 0; i < 100; i += 2) {
+                genomes[i] = new Genome();
+                genomes[i + 1] = new Genome();
+                // select two genomes and assign their winner to current generation
+                currGeneration[i / 2] = playGame(genomes[i], genomes[i + 1]);
+            }
+
+            // rewrite old generation
+            genomes = new Genome[100];
+
+            // copy winners to old generation
+            for (int i = 0; i < 50; i++) {
+                genomes[i] = currGeneration[i];
+            }
+
+            // breed two random indices of current generation
+            for (int i = 50; i < 90; i++) {
+                int random1 = random(0, 49);
+                int random2 = random(0, 49);
+                genomes[i] = new Genome(currGeneration[random1], currGeneration[random2]);
+            }
+
+            // generate 10 random breeds
+            for (int i = 90; i < 100; i++) {
+                genomes[i] = new Genome();
+            }
         }
 
-        // rewrite old generation
-        genomes = new Genome[100];
-
-        // copy winners to old generation
-        for (int i = 0; i < currGeneration.length; i++) {
-            genomes[i] = currGeneration[i];
-        }
-
-        // breed two random indices of current generation
-        for (int i = currGeneration.length; i < genomes.length - 10; i++) {
-            int random1 = random(0, 49);
-            int random2 = random(0, 49);
-            genomes[i] = new Genome(currGeneration[random1], currGeneration[random2]);
-        }
-
-        // generate 10 random breeds
-        for (int i = genomes.length - 10; i < genomes.length; i++) {
-            genomes[i] = new Genome();
-        }
+        System.out.println("PLAYING GAME!");
+        playGame(genomes[0], genomes[1], true);
     }
 
     static Genome playGame(Genome g1, Genome g2) {
@@ -75,6 +80,13 @@ public class Main {
         System.out.println(g1);
         System.out.println(g2);
         return tron.returnWinner(g1, g2);
+    }
+
+    static Genome playGame(Genome g1, Genome g2, boolean debug) {
+        Tron tron = new Tron();
+        System.out.println(g1);
+        System.out.println(g2);
+        return tron.returnWinner(g1, g2, debug);
     }
 
     static int random(int low, int high) {

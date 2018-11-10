@@ -19,11 +19,15 @@ socket.onerror = error => {
 };
 
 socket.onmessage = e => {
-  var gameStateString = JSON.parse([[[e.data]]]);
+  var gameStateString = JSON.parse([[[e.data]])]çç;
 
   console.log(gameStateString);
 
   // console.log(board);
+
+  // we don't know how to call the socket yet so we have to come see you
+  // for now we have the function call passed with an arbitrary array
+  // move(grid)
 
   var index = 0;
   var board = [];

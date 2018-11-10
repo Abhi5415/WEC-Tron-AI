@@ -305,14 +305,23 @@ public class Tron {
 
     public Genome returnWinner(Genome g1, Genome g2) {
         while (!gameOver) {
-            printGrid(grid);
             char move1 = g1.nextMove(grid, new Bike(bike1Row, bike1Column), new Bike(bike2Row, bike2Column), bike1Direction);
             char move2 = g2.nextMove(grid, new Bike(bike2Row, bike2Column), new Bike(bike1Row, bike1Column), bike2Direction);
-            System.out.printf("MOVE 1: %c MOVE 2: %c\n", move1, move2);
             makeMove(move1, move2);
         }
-        if (winnerOne) System.out.println("winner 1!!!");
-        else System.out.println("WINNER 2 BITCH");
+
+        if (winnerOne) return g1;
+        else return g2;
+    }
+
+    public Genome returnWinner(Genome g1, Genome g2, boolean debug) {
+        while (!gameOver) {
+            char move1 = g1.nextMove(grid, new Bike(bike1Row, bike1Column), new Bike(bike2Row, bike2Column), bike1Direction);
+            char move2 = g2.nextMove(grid, new Bike(bike2Row, bike2Column), new Bike(bike1Row, bike1Column), bike2Direction);
+            printGrid(grid);
+            makeMove(move1, move2);
+        }
+
         if (winnerOne) return g1;
         else return g2;
     }
