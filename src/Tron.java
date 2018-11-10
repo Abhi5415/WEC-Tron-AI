@@ -160,7 +160,7 @@ public class Tron {
                 }
                 else if (firstMove == 'r') {
                     grid[bike1Row][bike1Column+1] = 's';
-                    bike1Row += 1;
+                    bike1Column += 1;
                     bike1Direction = 'r';
                 }
                 else if (firstMove == 's') {
