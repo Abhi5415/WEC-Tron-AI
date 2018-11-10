@@ -233,7 +233,7 @@ public class Tron {
                 }
                 else if (secondMove == 'r') {
                     grid[bike2Row][bike2Column+1] = 'p';
-                    bike2Row += 1;
+                    bike2Column += 1;
                     bike2Direction = 'r';
                 }
                 else if (secondMove == 's') {
@@ -283,7 +283,7 @@ public class Tron {
                 else if (secondMove == 'r') {
                     grid[bike2Row+1][bike2Column] = 'p';
                     bike2Row += 1;
-                    bike2Direction = 'd';
+                    bike2Direction = 'd';   
                 }
                 else if (secondMove == 's') {
                     grid[bike2Row][bike2Column+1] = 'p';
